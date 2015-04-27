@@ -4,19 +4,7 @@ section#todoapp
     input#new-todo type="text" placeholder="What needs to be done?"
 
   section#main
-    ul#todo-list
-      li.completed
-        input.toggle type="checkbox"
-        label Learn Ember.coffee
-        button.destroy
-      li
-        input.toggle type="checkbox"
-        label ...
-        button.destroy
-      li
-        input.toggle type="checkbox"
-        label Profit
-        button.destroy
+    == outlet
     input#toggle-all type="checkbox"
 
   footer#footer

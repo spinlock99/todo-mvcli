@@ -1,0 +1,6 @@
+ul#todo-list
+  each todo in controller
+    li class=todo.isCompleted:completed
+      = input type="checkbox" class="toggle"
+      label = todo.title
+      button.destroy
