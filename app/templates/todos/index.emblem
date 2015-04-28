@@ -4,6 +4,6 @@ ul#todo-list
       if todo.isEditing
         = view "edit-todo" class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"
       else
-        = input type="checkbox" class="toggle"
+        = input type="checkbox" class="toggle" checked=todo.isCompleted
         label doubleClick="editTodo" #{todo.title}
         button.destroy click="removeTodo"

@@ -6,7 +6,7 @@ section#todoapp
   section#main
     == outlet
 
-  input#toggle-all type="checkbox"
+    = input id="toggle-all" type="checkbox" checked=allAreDone
 
   footer#footer
     span#todo-count

@@ -17,6 +17,14 @@ ApplicationController = Ember.ArrayController.extend
     return @get('completed') > 0
   ).property('completed')
 
+  allAreDone: ((key, value) ->
+    return @get('length') and @isEvery('isCompleted') unless value?
+
+    @setEach('isCompleted', value)
+    @invoke('save')
+    return value
+  ).property('@each.isCompleted')
+
   actions:
     createTodo: ->
       return unless title = @get('newTitle')?.trim()
