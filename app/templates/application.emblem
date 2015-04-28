@@ -13,9 +13,9 @@ section#todoapp
       strong: ' {{remaining}}
       | item{{s}} left
     ul#filters
-      li: a.selected href="all" All
-      li: a href="active" Active
-      li: a href="completed" Completed
+      li: = link-to "todos.index" activeClass="selected" | All
+      li: = link-to "todos.active" activeClass="selected" | Active
+      li: = link-to "todos.completed" activeClass="selected" | Completed
 
     button#clear-completed Clear completed (1)
 
