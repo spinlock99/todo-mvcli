@@ -1,6 +1,13 @@
-ul#todo-list
-  each todo in controller
-    li class=todo.isCompleted:completed
-      = input type="checkbox" class="toggle"
-      label = todo.title
-      button.destroy
+header#header
+  h1 todos
+  = input id='new-todo' action='createTodo' value=newTitle type="text" placeholder='What needs to be done?' autofocus='autofocus'
+
+section#main
+  ul#todo-list
+    each todo in model
+      li class=todo.isCompleted:completed
+        = input type="checkbox" class="toggle"
+        label = todo.title
+        button.destroy
+
+  input#toggle-all type="checkbox"

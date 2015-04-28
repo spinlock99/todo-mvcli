@@ -1,11 +1,5 @@
 section#todoapp
-  header#header
-    h1 todos
-    input#new-todo type="text" placeholder="What needs to be done?"
-
-  section#main
-    == outlet
-    input#toggle-all type="checkbox"
+  == outlet
 
   footer#footer
     span#todo-count
