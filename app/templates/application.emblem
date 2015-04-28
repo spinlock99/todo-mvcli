@@ -17,7 +17,9 @@ section#todoapp
       li: = link-to "todos.active" activeClass="selected" | Active
       li: = link-to "todos.completed" activeClass="selected" | Completed
 
-    button#clear-completed Clear completed (1)
+    if true
+      button#clear-completed click="clearCompleted"
+        | Clear completed ({{completed}})
 
 footer#info
   p Double-click to edit a todo
