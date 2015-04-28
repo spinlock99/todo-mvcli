@@ -1,7 +1,6 @@
 `import DS from 'ember-data'`
 
-TodoAdapter = DS.RESTAdapter.extend
-  namespace: 'api'
-  host: 'http://localhost:4200'
+TodoAdapter = DS.LSAdapter.extend
+  namespace: 'todo-embercoffee'
 
 `export default TodoAdapter`
