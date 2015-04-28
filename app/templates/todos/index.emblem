@@ -11,3 +11,14 @@ section#main
         button.destroy
 
   input#toggle-all type="checkbox"
+
+footer#footer
+  span#todo-count
+    strong: ' {{remaining}}
+    | item{{s}} left
+  ul#filters
+    li: a.selected href="all" All
+    li: a href="active" Active
+    li: a href="completed" Completed
+
+  button#clear-completed Clear completed (1)
