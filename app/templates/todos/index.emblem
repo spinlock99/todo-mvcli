@@ -1,27 +1,9 @@
-header#header
-  h1 todos
-  = input id="new-todo" action="createTodo" value=newTitle type="text" placeholder='What needs to be done?' autofocus='autofocus'
-
-section#main
-  ul#todo-list
-    each todo in controller itemController="todo"
-      li class={todo.isCompleted:completed todo.isEditing:editing}
-        if todo.isEditing
-          = view "edit-todo" class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"
-        else
-          = input type="checkbox" class="toggle"
-          label{action "editTodo" on="doubleClick"} #{todo.title}
-          button.destroy
-
-  input#toggle-all type="checkbox"
-
-footer#footer
-  span#todo-count
-    strong: ' {{remaining}}
-    | item{{s}} left
-  ul#filters
-    li: a.selected href="all" All
-    li: a href="active" Active
-    li: a href="completed" Completed
-
-  button#clear-completed Clear completed (1)
+ul#todo-list
+  each todo in controller itemController="todo"
+    li class={todo.isCompleted:completed todo.isEditing:editing}
+      if todo.isEditing
+        = view "edit-todo" class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"
+      else
+        = input type="checkbox" class="toggle"
+        label doubleClick="editTodo" #{todo.title}
+        button.destroy click="removeTodo"
