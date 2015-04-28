@@ -7,7 +7,7 @@ section#main
     each todo in controller itemController="todo"
       li class={todo.isCompleted:completed todo.isEditing:editing}
         if todo.isEditing
-          = view "edit-todo" class="edit"
+          = view "edit-todo" class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"
         else
           = input type="checkbox" class="toggle"
           label{action "editTodo" on="doubleClick"} #{todo.title}

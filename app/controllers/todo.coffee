@@ -19,7 +19,20 @@ TodoController = Ember.Controller.extend
 
   actions:
     editTodo: ->
-      console.log 'isEditing'
       @set('isEditing', true)
+
+    acceptChanges: ->
+      @set('isEditing', false)
+      unless @get('title.length')
+        # Debounce call because it will fire on the insert-newline and
+        # focus-out events.
+        Ember.run.debounce(@, 'send', 'removeTodo', 50)
+      else
+        @get('model').save()
+
+    removeTodo: ->
+      todo = @get('model')
+      todo.deleteRecord()
+      todo.save()
 
 `export default TodoController`
