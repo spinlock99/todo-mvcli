@@ -1,6 +1,8 @@
 `import Ember from 'ember'`
 
 TodoController = Ember.Controller.extend
+  isEditing: false
+
   title: (->
     return @get('model.title')
   ).property('model.title')
@@ -14,5 +16,10 @@ TodoController = Ember.Controller.extend
       model.save()
       return value
   ).property('model.isCompleted')
+
+  actions:
+    editTodo: ->
+      console.log 'isEditing'
+      @set('isEditing', true)
 
 `export default TodoController`

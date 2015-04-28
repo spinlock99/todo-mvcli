@@ -1,14 +1,17 @@
 header#header
   h1 todos
-  = input id='new-todo' action='createTodo' value=newTitle type="text" placeholder='What needs to be done?' autofocus='autofocus'
+  = input id="new-todo" action="createTodo" value=newTitle type="text" placeholder='What needs to be done?' autofocus='autofocus'
 
 section#main
   ul#todo-list
     each todo in controller itemController="todo"
-      li class=todo.isCompleted:completed
-        = input type="checkbox" class="toggle"
-        label = todo.title
-        button.destroy
+      li class={todo.isCompleted:completed todo.isEditing:editing}
+        if todo.isEditing
+          = view "edit-todo" class="edit"
+        else
+          = input type="checkbox" class="toggle"
+          label{action "editTodo" on="doubleClick"} #{todo.title}
+          button.destroy
 
   input#toggle-all type="checkbox"
 
