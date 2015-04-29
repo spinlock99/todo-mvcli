@@ -13,6 +13,7 @@ module.exports = function(app) {
   });
 
   todosRouter.post('/', function(req, res) {
+    res.send('null');
     res.status(201).end();
   });
 
