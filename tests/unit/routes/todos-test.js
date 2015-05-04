@@ -6,8 +6,8 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'route:todos',
-  'TodosRoute',
+  'route:todos.index',
+  'TodosIndexRoute',
   {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
