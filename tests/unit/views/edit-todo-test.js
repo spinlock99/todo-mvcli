@@ -1,5 +1,4 @@
 /* jshint expr:true */
-/* global sinon, beforeEach, afterEach */
 
 import { expect } from 'chai';
 import {
