@@ -12,6 +12,7 @@
     "jquery": "^1.11.1",
     "loader.js": "ember-cli/loader.js#3.2.0",
     "qunit": "~1.17.1",
-    "ember-mocha": "~0.6.2"
+    "ember-mocha": "~0.6.2",
+    "sinon": "http://sinonjs.org/releases/sinon-1.12.2.js"
   }
 }
