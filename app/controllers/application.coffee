@@ -1,4 +1,4 @@
-`import Ember from 'ember'`
+import Ember from 'ember'
 
 ApplicationController = Ember.ArrayController.extend
   remaining: (->
@@ -40,4 +40,4 @@ ApplicationController = Ember.ArrayController.extend
       completed.invoke('deleteRecord')
       completed.invoke('save')
 
-`export default ApplicationController`
+export default ApplicationController

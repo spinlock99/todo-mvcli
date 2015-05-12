@@ -1,43 +1,34 @@
 /* jshint expr:true */
 
 import { expect } from 'chai';
-import {
-  describeModule,
-  it
-} from 'ember-mocha';
+import { describeModule, it } from 'ember-mocha';
+
+var sandbox;
 
 beforeEach(function () {
-  this.sandbox = sinon.sandbox.create();
+  sandbox = sinon.sandbox.create();
 });
 
 afterEach(function () {
-  this.sandbox.restore();
+  sandbox.restore();
 });
 
 describeModule(
   'view:edit-todo',
   'EditTodoView',
-  {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  },
 
   function() {
-    // Replace this with your real tests.
-    it('exists', function() {
-      var view = this.subject();
-      expect(view).to.be.ok;
-    });
-
     it('grabs the focus', function () {
       var view = this.subject();
 
-      var jQuerySpy = {focus: this.sandbox.spy()};
-      var jQueryStub = this.sandbox.stub(view, '$').returns(jQuerySpy);
+      var focusSpy = sandbox.spy();
+      var jQuerySpy = {focus: focusSpy};
+      var jQueryStub = sandbox.stub(view, '$').returns(jQuerySpy);
 
       view.didInsertElement();
 
-      expect(jQuerySpy).to.have.been.called;
+      expect(focusSpy.callCount).to.eq(1);
+      expect(focusSpy).to.not.have.been.calledTwice;
     });
   }
 );
