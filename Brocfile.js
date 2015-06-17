@@ -1,4 +1,5 @@
 /* global require, module */
+// this comment is not conflicted at all.
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var app = new EmberApp();
