@@ -1,3 +1,5 @@
+# This comment is conflicted.
+
 import Ember from 'ember'
 
 ApplicationController = Ember.ArrayController.extend
