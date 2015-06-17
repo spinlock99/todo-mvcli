@@ -1,4 +1,4 @@
-# This comment is conflicted.
+# This comment is really conflicted.
 
 import Ember from 'ember'
 
