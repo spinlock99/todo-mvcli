@@ -19,6 +19,7 @@ ApplicationController = Ember.ArrayController.extend
     return @get('completed') > 0
   ).property('completed')
 
+  # combining getters and setters is deprecated now.
   allAreDone: ((key, value) ->
     return @get('length') and @isEvery('isCompleted') unless value?
 
